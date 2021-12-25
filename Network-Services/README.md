@@ -231,7 +231,7 @@ What is the password for the user "mike"?
 Bingo! Now, let's connect to the FTP server as this user using "ftp [IP]" and entering the credentials when prompted
 > No answer needed
 
-What is ftp.txt?
+What is ftp.txt??
 > 
 
 
