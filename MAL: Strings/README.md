@@ -41,6 +41,11 @@ What is the Bitcoin Address stored within "ComplexCalculator.exe"
 > 1LVB65imeojrgC3JPZGBwWhK1BdVZ2vYNC
 
 ## Task 5 - Summary
+What is the name of the toolset provided by Microsoft that allows you to extract the "strings" of an application?
+> sysinternals
 
-If you were connected to airport Wi-Fi, what most likely will be the active firewall profile?
-> 5/3/2021
+What operator would you use to "pipe" or store the output of the strings command?
+> >
+
+What is the name of the currency that ransomware often uses for payment?
+> bitcoin
