@@ -117,25 +117,25 @@ The lack of what, means that all Telnet communication is in plaintext?
 ## Task 6 - Enumerating Telnet
 
 How many ports are open on the target machine?    
-> 
+> 1
 
 What port is this?
-> 
+> 8012
 
 This port is unassigned, but still lists the protocol it's using, what protocol is this?     
-> 
+> tcp
 
 Now re-run the nmap scan, without the -p- tag, how many ports show up as open?
-> 
+> 0
 
 Here, we see that by assigning telnet to a non-standard port, it is not part of the common ports list, or top 1000 ports, that nmap scans. It's important to try every angle when enumerating, as the information you gather here will inform your exploitation stage.
 > No answer needed
 
 Based on the title returned to us, what do we think this port could be used for?
-> 
+> a backdoor
 
 Who could it belong to? Gathering possible usernames is an important step in enumeration.
-> 
+> skidy
 
 Always keep a note of information you find during your enumeration stage, so you can refer back to it when you move on to try exploits.
 > No answer needed
@@ -146,10 +146,12 @@ Okay, let's try and connect to this telnet port! If you get stuck, have a look a
 > No answer needed
 
 Great! It's an open telnet connection! What welcome message do we receive?
-> 
+> skidy's backdoor
+> ![Screen Shot 2022-01-04 at 9 54 48 am](https://user-images.githubusercontent.com/65474495/147989131-253224b4-947d-441d-bb74-114f5da6d808.png)
+
 
 Let's try executing some commands, do we get a return on any input we enter into the telnet session? (Y/N)
-> 
+> N
 
 Hmm... that's strange. Let's check to see if what we're typing is being executed as a system command.
 > No answer needed
@@ -163,7 +165,9 @@ This starts a tcpdump listener, specifically listening for ICMP traffic, which p
 > No answer needed
 
 Now, use the command "ping [local THM ip] -c 1" through the telnet session to see if we're able to execute system commands. Do we receive any pings? Note, you need to preface this with .RUN (Y/N)
-> 
+> Y
+> ![Screen Shot 2022-01-04 at 9 55 18 am](https://user-images.githubusercontent.com/65474495/147989167-507def2f-c27b-4820-b8f7-a6cc0c32afb9.png)
+
 
 Great! This means that we are able to execute system commands AND that we are able to reach our local machine. Now let's have some fun!
 > No answer needed
@@ -176,30 +180,31 @@ lport = the port to listen on (this is the port on your machine)
 R = export the payload in raw format
 
 What word does the generated payload start with?
-> 
+> ![Screen Shot 2022-01-04 at 10 09 40 am](https://user-images.githubusercontent.com/65474495/147990092-f60d0ef8-1c16-421b-b3d2-592ede75f7c7.png)
+
 
 Perfect. We're nearly there. Now all we need to do is start a netcat listener on our local machine. We do this using:
 "nc -lvp [listening port]"
 What would the command look like for the listening port we selected in our payload?
-> 
+> nc -lvp 4444
 
 Great! Now that's running, we need to copy and paste our msfvenom payload into the telnet session and run it as a command. Hopefully- this will give us a shell on the target machine!
 > No answer needed
 
 Success! What is the contents of flag.txt?
-> 
+> THM{y0u_g0t_th3_t3ln3t_fl4g}
 
 
 ## Task 8 - Understanding FTP
 
 What communications model does FTP use?
-> 
+> client-server
 
 What's the standard FTP port?
-> 
+> 21
 
 How many modes of FTP connection are there?    
-> 
+> 2
 
 
 ## Task 9 - Enumerating FTP
