@@ -209,21 +209,25 @@ How many modes of FTP connection are there?
 
 ## Task 9 - Enumerating FTP
 Run an nmap scan of your choice.
+>![Screen Shot 2022-01-04 at 10 56 37 am](https://user-images.githubusercontent.com/65474495/147992802-91f77ecc-f66b-4543-8d91-b55e27228519.png)
+
 How many ports are open on the target machine? 
-> 
+> 2
 
 What port is ftp running on?
-> 
+> 21
 
 What variant of FTP is running on it?  
-> 
+> vsftpd
 
 Great, now we know what type of FTP server we're dealing with we can check to see if we are able to login anonymously to the FTP server. We can do this using by typing "ftp [IP]" into the console, and entering "anonymous", and no password when prompted.
 What is the name of the file in the anonymous FTP directory?
-> 
+> PUBLIC_NOTICE.txt
+> ![Screen Shot 2022-01-04 at 10 58 11 am](https://user-images.githubusercontent.com/65474495/147992897-0a493ea3-54f0-42bd-9127-f4fbdc162c11.png)
+
 
 What do we think a possible username could be?
-> 
+> Mike
 
 Great! Now we've got details about the FTP server and, crucially, a possible username. Let's see what we can do with that...
 > No answer needed
@@ -231,13 +235,15 @@ Great! Now we've got details about the FTP server and, crucially, a possible use
 
 ## Task 10 - Exploiting FTP
 What is the password for the user "mike"?
-> 
+> ![Screen Shot 2022-01-04 at 11 03 38 am](https://user-images.githubusercontent.com/65474495/147993165-012a2801-3c2a-438c-9c84-db4f2832866a.png)
+> password
 
 Bingo! Now, let's connect to the FTP server as this user using "ftp [IP]" and entering the credentials when prompted
 > No answer needed
 
 What is ftp.txt??
-> 
+> ![Screen Shot 2022-01-04 at 11 06 45 am](https://user-images.githubusercontent.com/65474495/147993372-7f9511b7-6e45-4068-8fae-91740033e4a7.png)
+>THM{y0u_g0t_th3_ftp_fl4g}
 
 
 ## Task 11 - Expanding Your Knowledge
